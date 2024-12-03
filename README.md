@@ -90,3 +90,37 @@ db.pragma('journal_mode = WAL');
 # 许可证
 
 [MIT](./LICENSE)
+
+## 构建脚本说明
+
+项目包含以下 npm 脚本命令：
+
+### 基础命令
+- `install`: 安装时优先使用预构建二进制，如果失败则本地编译
+- `build-release`: 以发布模式编译项目
+- `build-debug`: 以调试模式编译项目
+- `rebuild-release`: 先生成C++代码，然后以发布模式编译
+- `rebuild-debug`: 先生成C++代码，然后以调试模式编译
+- `test`: 运行测试套件
+- `benchmark`: 运行性能基准测试
+- `download`: 下载依赖项
+- `lzz`: 使用lzz工具生成C++代码
+
+### 架构相关命令
+- `build-arm64`: 为ARM64架构编译发布版本
+- `build-x64`: 为x64架构编译发布版本
+- `build-universal`: 创建通用二进制（同时支持ARM64和x64）
+
+### N-API 预构建命令
+- `prebuild-arm64`: 为ARM64架构预构建N-API版本
+- `prebuild-x64`: 为x64架构预构建N-API版本
+- `prebuild-all`: 预构建所有N-API架构版本
+
+### Electron 相关命令
+- `build-all`: 为Electron v22.0.0编译
+- `build-electron-arm64`: 为Electron ARM64架构构建
+- `build-electron-x64`: 为Electron x64架构构建
+- `build-electron-universal`: 构建Electron通用版本（ARM64 + x64）
+- `prebuild-electron-arm64`: 为Electron ARM64架构预构建
+- `prebuild-electron-x64`: 为Electron x64架构预构建
+- `prebuild-electron-all`: 预构建所有Electron架构版本
